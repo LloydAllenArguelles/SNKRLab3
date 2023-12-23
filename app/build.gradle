@@ -15,6 +15,9 @@ android {
             // Other configurations specific to your test SourceSet
         }
     }
+    kotlinOptions {
+        jvmTarget = '1.8' // Set the Java target version here
+    }
     defaultConfig {
         applicationId "com.techbuddy.snkrlab3"
         minSdkVersion androidMinSdkVersion
