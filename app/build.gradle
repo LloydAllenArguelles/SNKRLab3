@@ -5,14 +5,14 @@ plugins {
 
 android {
     namespace 'com.techbuddy.snkrlab3'
-    compileSdkVersion 34
+    compileSdkVersion androidCompileSdkVersion 34
 
     defaultConfig {
         applicationId "com.techbuddy.snkrlab3"
-        minSdkVersion 27
-        targetSdkVersion 34
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion androidMinSdkVersion
+        targetSdkVersion androidTargetSdkVersion
+        versionCode cameraKitDistributionCode
+        versionName cameraKitDistributionVersion
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         // These fields are preserved from the first block
