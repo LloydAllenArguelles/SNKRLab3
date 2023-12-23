@@ -1,17 +1,21 @@
-pluginManagement {
+rootProject.name = "SNKRLab3"
+include ':app'
+
+dependencyResolutionManagement {
     repositories {
-        google()
         mavenCentral()
         gradlePluginPortal()
     }
-}
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
+    versionCatalogs {
+        libs {
+            def kotlin = version('kotlin', '1.8.0')
+            plugin('kotlin', 'org.jetbrains.kotlin.jvm').versionRef(kotlin)
+            plugin('ktlint', 'org.jlleitschuh.gradle.ktlint').version('11.0.0')
+        }
     }
 }
 
-rootProject.name = "SNKRLab3"
-include ':app'
+def include(String moduleName, String relativePath) {
+    include(moduleName)
+    project(moduleName).projectDir = new File(rootDir, relativePath)
+}

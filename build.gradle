@@ -1,4 +1,83 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.3.1'
+    }
+}
+
 plugins {
-id 'com.android.application' version '8.1.4' apply false
+    alias libs.plugins.kotlin apply false
+    alias libs.plugins.ktlint apply false
+}
+
+def versionFilePath = file('VERSION') // Attempt to reference the VERSION file in the project root by default
+
+// Check if the VERSION file exists in the SNKRLab3 directory
+def versionFileInSubdirectory = file('SNKRLab3/VERSION')
+if (versionFileInSubdirectory.exists()) {
+    versionFilePath = versionFileInSubdirectory // If it exists, use this file
+}
+allprojects {
+    ext {
+        kotlinVersion = libs.versions.kotlin.get()
+        ktxVersion = '1.8.0'
+        exoPlayerVersion = '2.16.1'
+        appCompatVersion = '1.4.0'
+        constraintLayoutVersion = '2.1.2'
+        materialVersion = '1.4.0'
+        recyclerViewVersion = '1.2.1'
+        drawerLayoutVersion = '1.1.1'
+        glideVersion = '4.11.0'
+        gmsVisionVersion = '16.2.0'
+
+        androidMinSdkVersion = 21
+        androidCompileSdkVersion = 34
+        androidTargetSdkVersion = androidCompileSdkVersion
+
+        cameraKitDistributionVersion = versionFilePath.text.trim()
+        cameraKitDistributionCode = 1
+        cameraKitVersion = "$cameraKitDistributionVersion"
+        // NOTE: replace the value with a token specific to your application
+        cameraKitApiToken = property('com.snap.camerakit.api.token')
+        // NOTE: replace the value with a lenses group ID specific to your application
+        cameraKitLensesGroupId = property('com.snap.camerakit.lenses.group.id')
+        cameraKitLensesGroupIdArCore = property('com.snap.camerakit.lenses.group.id.arcore')
+    }
+    repositories {
+        mavenCentral()
+        google()
+    }
+}
+
+subprojects {
+    configurations.all {
+        if (it.name.startsWith('downloadSources')) {
+            resolutionStrategy {
+                eachDependency { DependencyResolveDetails details ->
+                    if (details.requested.group == 'com.snap.camerakit') {
+                        details.useVersion details.requested.version
+                                .replaceAll("@aar", "")
+                                .split(" ")
+                                .first()
+                    }
+                }
+            }
+        }
+    }
+
+    tasks.whenTaskAdded { task ->
+        if (task.class.name.contains('PackagedDependenciesWriterTask')) {
+            task.outputs.doNotCacheIf('https://issuetracker.google.com/196847356') {
+                true
+            }
+        }
+    }
+
+    apply plugin: libs.plugins.ktlint.get().pluginId
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
