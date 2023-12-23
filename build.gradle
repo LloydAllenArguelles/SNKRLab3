@@ -32,7 +32,7 @@ allprojects {
         glideVersion = '4.11.0'
         gmsVisionVersion = '16.2.0'
 
-        androidMinSdkVersion = 21
+        androidMinSdkVersion = 26
         androidCompileSdkVersion = 34
         androidTargetSdkVersion = androidCompileSdkVersion
 

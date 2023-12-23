@@ -33,8 +33,19 @@ android {
         // Other build features configuration if needed
     }
 
+    signingConfigs {
+        debug {
+            storeFile file('C:/Users/Personal/.android/debug.keystore')
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+        }
+    }
+
     buildTypes {
-        debug {}
+        debug {
+            signingConfig signingConfigs.debug
+        }
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
