@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.SNKRLab2" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.SNKRLab3" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
@@ -19,5 +19,5 @@
         <item name="android:windowExitTransition">@android:transition/no_transition</item>
     </style>
 
-    <style name="Theme.SNKRLab2" parent="Base.Theme.SNKRLab2" />
+    <style name="Theme.SNKRLab3" parent="Base.Theme.SNKRLab3" />
 </resources>

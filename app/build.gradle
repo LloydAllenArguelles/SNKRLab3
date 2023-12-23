@@ -5,8 +5,16 @@ plugins {
 
 android {
     namespace 'com.techbuddy.snkrlab3'
-    compileSdkVersion androidCompileSdkVersion 34
+    compileSdkVersion 34
 
+    sourceSets {
+        // Define the 'test' SourceSet
+        test {
+            java.srcDirs = ['src/test/java'] // Example test source directory
+            resources.srcDirs = ['src/test/resources'] // Example test resources directory
+            // Other configurations specific to your test SourceSet
+        }
+    }
     defaultConfig {
         applicationId "com.techbuddy.snkrlab3"
         minSdkVersion androidMinSdkVersion
@@ -18,6 +26,11 @@ android {
         // These fields are preserved from the first block
         buildConfigField 'String', "LENS_GROUP_ID_TEST", "\"$cameraKitLensesGroupId\""
         buildConfigField 'String', "CAMERA_KIT_API_TOKEN", "\"$cameraKitApiToken\""
+    }
+
+    buildFeatures {
+        buildConfig true // Add this line to enable BuildConfig generation
+        // Other build features configuration if needed
     }
 
     buildTypes {
@@ -45,6 +58,18 @@ android {
         }
     }
 }
+
+task testClasses(type: JavaCompile) {
+    description = 'Compile test classes'
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+    classpath = files()
+    android.sourceSets.getByName('test').java.srcDirs.each { dir ->
+        classpath += files(dir)
+    }
+}
+
+
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
