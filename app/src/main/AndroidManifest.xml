@@ -50,9 +50,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity3"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity2"
             android:exported="false" />
         <activity
@@ -64,6 +61,40 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".NikeActivity"
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name=".AdidasActivity"
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name=".ConverseActivity"
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name=".SketchersActivity"
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name=".NewbalanceActivity"
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name=".RebookActivity"
+            android:exported="false">
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
