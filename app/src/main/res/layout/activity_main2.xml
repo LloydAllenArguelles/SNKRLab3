@@ -1,49 +1,307 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:foregroundTint="#000000"
     tools:context=".MainActivity2">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Welcome to SNKRLab"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.182" />
+        android:id="@+id/constraintLayout"
+        android:layout_marginTop="20dp">
 
-    <ImageButton
-        android:id="@+id/nike_button"
-        android:layout_width="103dp"
-        android:layout_height="77dp"
-        android:backgroundTint="#070707"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.19999999"
-        app:srcCompat="@drawable/nikelogo" />
+        <TextView
+            android:id="@+id/AppName"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="SNKRLAB"
+            android:textColor="@color/main"
+            android:textSize="40sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/placeholder_button"
-        android:layout_width="103dp"
-        android:layout_height="77dp"
-        android:backgroundTint="#070707"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.7"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.2"
-        app:srcCompat="@drawable/nikelogo" />
+        <TextView
+            android:id="@+id/Welcome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="4dp"
+            android:text="Explore sneaks on your phone!"
+            android:textColor="@color/shoeColor"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/applogo"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/AppName" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:id="@+id/applogo"
+            android:src="@drawable/snkrlab_no_text"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintStart_toEndOf="@id/AppName"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="175dp"
+            android:id="@+id/row1"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/applogo">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/nikeCard"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/nike"
+                        android:text="Nike"
+                        android:textSize="20sp"
+                        android:textColor="@color/main"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:layout_marginTop="10dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/nikeImage"/>
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:id="@+id/nikeImage"
+                        android:src="@drawable/nikecheck"
+                        android:layout_marginTop="15dp"
+                        android:layout_centerHorizontal="true"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/adidasCard"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/adidas"
+                        android:text="Adidas"
+                        android:textSize="20sp"
+                        android:textColor="@color/main"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:layout_marginTop="10dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/adidasImage"/>
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:id="@+id/adidasImage"
+                        android:src="@drawable/adidascheck"
+                        android:layout_marginTop="15dp"
+                        android:layout_centerHorizontal="true"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="175dp"
+            android:id="@+id/row2"
+            android:orientation="horizontal"
+            android:layout_marginTop="0dp"
+            android:padding="10dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/row1">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/converseCard"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/converse"
+                        android:text="Converse"
+                        android:textSize="20sp"
+                        android:textColor="@color/main"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:layout_marginTop="10dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/converseImage"/>
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:id="@+id/converseImage"
+                        android:src="@drawable/conversecheck"
+                        android:layout_marginTop="25dp"
+                        android:layout_centerHorizontal="true"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/newbalanceCard"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/newbalance"
+                        android:text="New Balance"
+                        android:textSize="20sp"
+                        android:textColor="@color/main"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:layout_marginTop="10dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/newbalanceImage"/>
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:id="@+id/newbalanceImage"
+                        android:src="@drawable/newbalancecheck"
+                        android:layout_marginTop="15dp"
+                        android:layout_centerHorizontal="true"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="175dp"
+            android:id="@+id/row3"
+            android:orientation="horizontal"
+            android:layout_marginTop="0dp"
+            android:padding="10dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/row2">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/sketchersCard"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/sketchers"
+                        android:text="Sketchers"
+                        android:textSize="20sp"
+                        android:textColor="@color/main"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:layout_marginTop="10dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/sketchersImage"/>
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:id="@+id/sketchersImage"
+                        android:src="@drawable/sketchercheck"
+                        android:layout_marginTop="15dp"
+                        android:layout_centerHorizontal="true"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/rebookCard"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rebook"
+                        android:text="Rebook"
+                        android:textSize="20sp"
+                        android:textColor="@color/main"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:layout_marginTop="10dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/rebookImage"/>
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:id="@+id/rebookImage"
+                        android:src="@drawable/rebookcheck"
+                        android:layout_marginTop="15dp"
+                        android:layout_centerHorizontal="true"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
