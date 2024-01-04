@@ -27,6 +27,7 @@ import com.snap.camerakit.Source
 import com.snap.camerakit.common.Consumer
 import com.snap.camerakit.invoke
 import com.snap.camerakit.lenses.LensesComponent
+import com.snap.camerakit.lenses.LensesLaunchData
 import com.snap.camerakit.lenses.whenHasSome
 import com.snap.camerakit.support.camera.AllowsSnapshotCapture
 import com.snap.camerakit.support.camera.AllowsVideoCapture
@@ -73,6 +74,8 @@ class CameraActivity : AppCompatActivity(R.layout.activity_overallcam) {
             finish()
             return
         }
+
+        val shoeValue = intent.getIntExtra("shoe", 0)
 
         liveCameraContainer = findViewById(R.id.camera_preview_container)
         selectedLensContainer = findViewById(R.id.selected_lens_container)
@@ -156,7 +159,7 @@ class CameraActivity : AppCompatActivity(R.layout.activity_overallcam) {
                 runOnUiThread {
                     lensesAdapter.submitList(lenses)
                 }
-                applyLens(lenses.first())
+                applyLens(lenses.first(), shoeValue)
             }
         }
 
@@ -178,14 +181,14 @@ class CameraActivity : AppCompatActivity(R.layout.activity_overallcam) {
 
         findViewById<RecyclerView>(R.id.lenses_list).apply {
             lensesAdapter = LensesAdapter { selectedLens ->
-                applyLens(selectedLens)
+                applyLens(selectedLens, shoeValue)
             }
             layoutManager = GridLayoutManager(this@CameraActivity, 3)
             adapter = lensesAdapter
         }
     }
 
-    private fun applyLens(lens: LensesComponent.Lens) {
+    private fun applyLens(lens: LensesComponent.Lens, shoeValue: Int) {
         val usingCorrectCamera =
             isCameraFacingFront.xor(lens.facingPreference != LensesComponent.Lens.Facing.FRONT)
         if (!usingCorrectCamera) flipCamera()
