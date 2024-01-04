@@ -28,6 +28,7 @@ import com.snap.camerakit.common.Consumer
 import com.snap.camerakit.invoke
 import com.snap.camerakit.lenses.LensesComponent
 import com.snap.camerakit.lenses.LensesLaunchData
+import com.snap.camerakit.lenses.newBuilder
 import com.snap.camerakit.lenses.whenHasSome
 import com.snap.camerakit.support.camera.AllowsSnapshotCapture
 import com.snap.camerakit.support.camera.AllowsVideoCapture
@@ -147,7 +148,6 @@ class CameraActivity : AppCompatActivity(R.layout.activity_overallcam) {
         }
 
         getOsPermissions()
-
         // This block demonstrates how to query the repository to get all Lenses from a Camera Kit
         // group. You can query from multiple groups or pre-fetch all Lenses before even user opens
         // the Camera Kit integration. Camera Kit APIs are thread safe - so it's safe to call them
@@ -156,10 +156,26 @@ class CameraActivity : AppCompatActivity(R.layout.activity_overallcam) {
             LensesComponent.Repository.QueryCriteria.Available(setOf(BuildConfig.LENS_GROUP_ID_TEST))
         ) { result ->
             result.whenHasSome { lenses ->
-                runOnUiThread {
-                    lensesAdapter.submitList(lenses)
+                val filteredLenses = lenses.filter { lens ->
+                    lens.vendorData["shoe"] == shoeValue.toString() // Adjust 'shoe' to your vendor data key
                 }
-                applyLens(lenses.first(), shoeValue)
+
+                runOnUiThread {
+                    findViewById<RecyclerView>(R.id.lenses_list)?.apply {
+                        lensesAdapter = LensesAdapter { selectedLens ->
+                            applyLens(selectedLens)
+                        }
+                        layoutManager = GridLayoutManager(this@CameraActivity, 3)
+                        adapter = lensesAdapter
+
+                        lensesAdapter.submitList(filteredLenses)
+                    }
+                }
+
+                // Apply the first lens from filtered lenses list
+                if (filteredLenses.isNotEmpty()) {
+                    applyLens(filteredLenses.first())
+                }
             }
         }
 
@@ -181,14 +197,14 @@ class CameraActivity : AppCompatActivity(R.layout.activity_overallcam) {
 
         findViewById<RecyclerView>(R.id.lenses_list).apply {
             lensesAdapter = LensesAdapter { selectedLens ->
-                applyLens(selectedLens, shoeValue)
+                applyLens(selectedLens)
             }
             layoutManager = GridLayoutManager(this@CameraActivity, 3)
             adapter = lensesAdapter
         }
     }
 
-    private fun applyLens(lens: LensesComponent.Lens, shoeValue: Int) {
+    private fun applyLens(lens: LensesComponent.Lens) {
         val usingCorrectCamera =
             isCameraFacingFront.xor(lens.facingPreference != LensesComponent.Lens.Facing.FRONT)
         if (!usingCorrectCamera) flipCamera()
