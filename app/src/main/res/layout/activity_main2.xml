@@ -130,6 +130,20 @@
                         android:layout_marginTop="15dp"
                         android:layout_centerHorizontal="true"/>
                 </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/nikeOverlay"
+                    android:layout_width="180dp"
+                    android:layout_height="140dp"
+                    android:src="@drawable/comingsoon"
+                    android:scaleType="fitXY"
+                    android:clickable="true"
+                    android:alpha="0.5"
+                    app:layout_constraintTop_toTopOf="@id/nikeImage"
+                    app:layout_constraintStart_toStartOf="@id/nikeImage"
+                    app:layout_constraintEnd_toEndOf="@id/nikeImage"
+                    app:layout_constraintBottom_toBottomOf="@id/nikeImage" />
+
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
@@ -179,6 +193,20 @@
                         android:layout_marginTop="25dp"
                         android:layout_centerHorizontal="true"/>
                 </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/nikeOverlay"
+                    android:layout_width="180dp"
+                    android:layout_height="140dp"
+                    android:src="@drawable/comingsoon"
+                    android:scaleType="fitXY"
+                    android:clickable="true"
+                    android:alpha="0.5"
+                    app:layout_constraintTop_toTopOf="@id/nikeImage"
+                    app:layout_constraintStart_toStartOf="@id/nikeImage"
+                    app:layout_constraintEnd_toEndOf="@id/nikeImage"
+                    app:layout_constraintBottom_toBottomOf="@id/nikeImage" />
+
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -214,6 +242,20 @@
                         android:layout_marginTop="15dp"
                         android:layout_centerHorizontal="true"/>
                 </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/nikeOverlay"
+                    android:layout_width="180dp"
+                    android:layout_height="140dp"
+                    android:src="@drawable/comingsoon"
+                    android:scaleType="fitXY"
+                    android:clickable="true"
+                    android:alpha="0.5"
+                    app:layout_constraintTop_toTopOf="@id/nikeImage"
+                    app:layout_constraintStart_toStartOf="@id/nikeImage"
+                    app:layout_constraintEnd_toEndOf="@id/nikeImage"
+                    app:layout_constraintBottom_toBottomOf="@id/nikeImage" />
+
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
@@ -263,6 +305,20 @@
                         android:layout_marginTop="15dp"
                         android:layout_centerHorizontal="true"/>
                 </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/nikeOverlay"
+                    android:layout_width="180dp"
+                    android:layout_height="140dp"
+                    android:src="@drawable/comingsoon"
+                    android:scaleType="fitXY"
+                    android:clickable="true"
+                    android:alpha="0.5"
+                    app:layout_constraintTop_toTopOf="@id/nikeImage"
+                    app:layout_constraintStart_toStartOf="@id/nikeImage"
+                    app:layout_constraintEnd_toEndOf="@id/nikeImage"
+                    app:layout_constraintBottom_toBottomOf="@id/nikeImage" />
+
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -298,6 +354,20 @@
                         android:layout_marginTop="15dp"
                         android:layout_centerHorizontal="true"/>
                 </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/nikeOverlay"
+                    android:layout_width="180dp"
+                    android:layout_height="140dp"
+                    android:src="@drawable/comingsoon"
+                    android:scaleType="fitXY"
+                    android:clickable="true"
+                    android:alpha="0.5"
+                    app:layout_constraintTop_toTopOf="@id/nikeImage"
+                    app:layout_constraintStart_toStartOf="@id/nikeImage"
+                    app:layout_constraintEnd_toEndOf="@id/nikeImage"
+                    app:layout_constraintBottom_toBottomOf="@id/nikeImage" />
+
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
