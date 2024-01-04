@@ -185,19 +185,6 @@ class CameraActivity : AppCompatActivity(R.layout.activity_overallcam) {
         }
     }
 
-    val reApplyLensWithVendorData = { lens: LensesComponent.Lens ->
-        if (lens.vendorData.isNotEmpty()) {
-            val launchData = LensesComponent.Lens.LaunchData {
-                for ((key, value) in lens.vendorData) {
-                    putString(key, value)
-                }
-            }
-            session.lenses.processor.apply(lens, launchData) { success ->
-                Log.d(TAG, "Apply lens [$lens] with launch data [$launchData] success: $success")
-            }
-        }
-    }
-
     private fun applyLens(lens: LensesComponent.Lens) {
         val usingCorrectCamera =
             isCameraFacingFront.xor(lens.facingPreference != LensesComponent.Lens.Facing.FRONT)
