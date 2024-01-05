@@ -77,21 +77,6 @@
             android:exported="false">
         </activity>
 
-        <activity
-            android:name=".SketchersActivity"
-            android:exported="false">
-        </activity>
-
-        <activity
-            android:name=".NewbalanceActivity"
-            android:exported="false">
-        </activity>
-
-        <activity
-            android:name=".RebookActivity"
-            android:exported="false">
-        </activity>
-
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
