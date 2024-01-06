@@ -49,6 +49,10 @@ public class MainActivity2 extends AppCompatActivity {
         converseCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(MainActivity2.this,  CameraActivity.class);
+                int intValue = 2; // Replace this with your desired integer value
+                intent.putExtra("shoe", intValue);
+                startActivity(intent);
             }
         });
     }

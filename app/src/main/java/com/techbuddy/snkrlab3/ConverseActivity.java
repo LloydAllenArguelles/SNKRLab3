@@ -41,7 +41,7 @@ public class ConverseActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ConverseActivity.this, CameraActivity.class);
-                int intValue = 1; // Replace this with your desired integer value
+                int intValue = 2; // Replace this with your desired integer value
                 intent.putExtra("shoe", intValue);
                 startActivity(intent);
             }
