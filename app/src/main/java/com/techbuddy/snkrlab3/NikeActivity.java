@@ -19,6 +19,7 @@ public class NikeActivity extends AppCompatActivity {
             setContentView(R.layout.activity_nike);
 
             ImageView back = findViewById(R.id.back);
+          
             ImageView nikeImage = findViewById(R.id.nikeImage);
             nikeImage.setOnClickListener(new View.OnClickListener() {
                 @Override
