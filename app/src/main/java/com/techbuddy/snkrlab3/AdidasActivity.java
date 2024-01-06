@@ -30,6 +30,8 @@ public class AdidasActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdidasActivity.this, CameraActivity.class);
+                int intValue = 1; // Replace this with your desired integer value
+                intent.putExtra("shoe", intValue);
                 startActivity(intent);
             }
         });
@@ -39,6 +41,8 @@ public class AdidasActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdidasActivity.this, CameraActivity.class);
+                int intValue = 1; // Replace this with your desired integer value
+                intent.putExtra("shoe", intValue);
                 startActivity(intent);
             }
         });
