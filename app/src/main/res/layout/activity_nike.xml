@@ -108,7 +108,63 @@
                     android:layout_centerHorizontal="true"/>
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="215dp"
+        android:layout_height="175dp"
+        android:id="@+id/row2"
+        android:orientation="horizontal"
+        android:layout_below="@id/row"
+        android:layout_centerHorizontal="false"
+        android:layout_centerVertical="true"
+        android:padding="10dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/nikeCard3"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nike3"
+                    android:text="Air Max"
+                    android:textSize="20sp"
+                    android:textColor="@color/main"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/nikeImage3"/>
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:id="@+id/nikeImage3"
+                    android:src="@drawable/airmax"
+                    android:layout_marginTop="15dp"
+                    android:layout_centerHorizontal="true"/>
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:alpha="0.9"
+        android:src="@drawable/back" />
 
 </RelativeLayout>
