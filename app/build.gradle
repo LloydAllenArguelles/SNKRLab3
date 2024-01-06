@@ -18,6 +18,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8' // Set the Java target version here
     }
+    packagingOptions {
+        exclude 'META-INF/INDEX.LIST'
+        exclude 'META-INF/DEPENDENCIES'
+        // Add more exclusions or configurations if needed
+    }
     defaultConfig {
         applicationId "com.techbuddy.snkrlab3"
         minSdkVersion androidMinSdkVersion
