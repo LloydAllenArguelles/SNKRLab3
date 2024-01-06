@@ -18,7 +18,6 @@ public class NikeActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_nike);
 
-            ImageView back = findViewById(R.id.back);
             ImageView nikeImage = findViewById(R.id.nikeImage);
             nikeImage.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -30,7 +29,7 @@ public class NikeActivity extends AppCompatActivity {
             nikeCard1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(NikeActivity.this, ForceActivity.class);
+                    Intent intent = new Intent(NikeActivity.this, CameraActivity.class);
                     int intValue = 0; // Replace this with your desired integer value
                     intent.putExtra("shoe", intValue);
                     startActivity(intent);
@@ -41,24 +40,7 @@ public class NikeActivity extends AppCompatActivity {
             nikeCard2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(NikeActivity.this, JordanActivity.class);
-                    startActivity(intent);
-                }
-            });
-
-            CardView nikeCard3 = findViewById(R.id.nikeCard3);
-            nikeCard3.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(NikeActivity.this, MaxActivity.class);
-                    startActivity(intent);
-                }
-            });
-
-            back.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(NikeActivity.this, MainActivity2.class);
+                    Intent intent = new Intent(NikeActivity.this, CameraActivity.class);
                     int intValue = 0; // Replace this with your desired integer value
                     intent.putExtra("shoe", intValue);
                     startActivity(intent);
