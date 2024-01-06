@@ -27,9 +27,7 @@ public class MainActivity2 extends AppCompatActivity {
         nikeCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity2.this,  CameraActivity.class);
-                int intValue = 0; // Replace this with your desired integer value
-                intent.putExtra("shoe", intValue);
+                Intent intent = new Intent(MainActivity2.this, NikeActivity.class);
                 startActivity(intent);
             }
         });
@@ -38,9 +36,7 @@ public class MainActivity2 extends AppCompatActivity {
         adidasCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity2.this,  CameraActivity.class);
-                int intValue = 1; // Replace this with your desired integer value
-                intent.putExtra("shoe", intValue);
+                Intent intent = new Intent(MainActivity2.this, AdidasActivity.class);
                 startActivity(intent);
             }
         });
@@ -49,11 +45,37 @@ public class MainActivity2 extends AppCompatActivity {
         converseCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity2.this,  CameraActivity.class);
-                int intValue = 2; // Replace this with your desired integer value
-                intent.putExtra("shoe", intValue);
+                Intent intent = new Intent(MainActivity2.this, ConverseActivity.class);
                 startActivity(intent);
             }
         });
+
+        sketchersCard = findViewById(R.id.sketchersCard);
+        sketchersCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity2.this, SketchersActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        newbalanceCard = findViewById(R.id.newbalanceCard);
+        newbalanceCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity2.this, NewbalanceActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        rebookCard = findViewById(R.id.rebookCard);
+        rebookCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity2.this, RebookActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
