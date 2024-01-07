@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ForceActivity">
+    tools:context=".CloudActivity">
 
     <VideoView
         android:id="@+id/videoView"
@@ -22,8 +22,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/nikeTitle"
-        android:text="Nike Sneakers"
+        android:id="@+id/adidasTitle"
+        android:text="Adidas Sneakers"
         android:textSize="36sp"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/poppins_semibold"
@@ -33,18 +33,18 @@
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:id="@+id/nikeImage"
-        android:layout_below="@id/nikeTitle"
+        android:id="@+id/adidasImage"
+        android:layout_below="@id/adidasTitle"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:src="@drawable/nikecheck"/>
+        android:src="@drawable/adidascheck"/>
 
     <LinearLayout
         android:layout_width="500dp"
         android:layout_height="500dp"
         android:id="@+id/row"
         android:orientation="horizontal"
-        android:layout_below="@id/nikeImage"
+        android:layout_below="@id/adidasImage"
         android:layout_centerHorizontal="false"
         android:layout_centerVertical="true"
         android:padding="10dp">
@@ -52,7 +52,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:id="@+id/nikeCard1"
+            android:id="@+id/adidasCard1"
             android:layout_margin="10dp"
             android:layout_weight="1"
             app:cardElevation="5dp"
@@ -65,31 +65,31 @@
                 android:background="@color/first" />
 
             <TextView
-                android:id="@+id/nike1"
+                android:id="@+id/adidas1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:fontFamily="@font/poppins_semibold"
-                android:text="Air Jordan"
+                android:text="Cloudfoam"
                 android:textColor="@color/main"
-                android:layout_marginLeft="105dp"
+                android:layout_marginLeft="95dp"
                 android:textSize="30sp" />
 
             <ImageView
-                android:id="@+id/nikeImage1"
+                android:id="@+id/adidasImage1"
                 android:layout_width="170dp"
                 android:layout_height="170dp"
                 android:layout_marginTop="40dp"
                 android:layout_marginLeft="95dp"
-                android:src="@drawable/airjordan" />
+                android:src="@drawable/adcloud" />
 
             <TextView
-                android:id="@+id/nikeInfo"
+                android:id="@+id/adidasInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="200dp"
                 android:fontFamily="@font/poppins"
-                android:text="          The first Air Jordan was produced for use by Michael Jordan in November 1984. They were designed by Peter B. Moore, and released during Jordan's sophomore season with the Chicago Bulls. "
+                android:text="          Cloudfoam is a newly developed EVA compound, a heel pad in the midsole, that provides a new supreme level of underfoot cushioning. Cloudfoam shoes are sneakers designed for casual workouts and exercise."
                 android:textColor="@color/black"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
@@ -135,7 +135,7 @@
         android:layout_marginTop="650dp"
         android:layout_marginLeft="155dp"
         android:alpha="0.9"
-        android:src="@drawable/second" />
+        android:src="@drawable/third" />
 
     <ImageView
         android:id="@+id/back"

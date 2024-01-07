@@ -10,6 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.net.Uri;
+import android.widget.VideoView;
+import android.media.MediaPlayer;
 
 public class AdidasActivity extends AppCompatActivity {
 
@@ -17,6 +20,15 @@ public class AdidasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adidas);
+
+        VideoView videoView = findViewById(R.id.videoView);
+        String uriPath = "android.resource://" + getPackageName() + "/" + R.raw.adidasbg;
+        videoView.setVideoURI(Uri.parse(uriPath));
+        videoView.start();
+        videoView.setOnPreparedListener(MediaPlayer::start);
+        videoView.setOnCompletionListener(MediaPlayer::start);
+
+        ImageView back = findViewById(R.id.back);
 
         ImageView adidasImage = findViewById(R.id.adidasImage);
         adidasImage.setOnClickListener(new View.OnClickListener() {
@@ -29,7 +41,7 @@ public class AdidasActivity extends AppCompatActivity {
         adidasCard1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdidasActivity.this, CameraActivity.class);
+                Intent intent = new Intent(AdidasActivity.this, NMDActivity.class);
                 startActivity(intent);
             }
         });
@@ -38,8 +50,33 @@ public class AdidasActivity extends AppCompatActivity {
         adidasCard2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdidasActivity.this, CameraActivity.class);
+                Intent intent = new Intent(AdidasActivity.this, AlphaActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        CardView adidasCard3 = findViewById(R.id.adidasCard3);
+        adidasCard3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdidasActivity.this, CloudActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdidasActivity.this, MainActivity2.class);
+                startActivity(intent);
+            }
+        });
+
+        videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                // Restart the video when it completes
+                videoView.start(); // Loop the video
             }
         });
 

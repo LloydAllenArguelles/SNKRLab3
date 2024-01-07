@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 
 import android.view.View;
@@ -14,12 +16,12 @@ import android.net.Uri;
 import android.widget.VideoView;
 import android.media.MediaPlayer;
 
-public class MaxActivity extends AppCompatActivity {
+public class AlphaActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_max);
+        setContentView(R.layout.activity_alpha);
 
         VideoView videoView = findViewById(R.id.videoView);
         String uriPath = "android.resource://" + getPackageName() + "/" + R.raw.shoebg;
@@ -36,7 +38,7 @@ public class MaxActivity extends AppCompatActivity {
         tryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MaxActivity.this, CameraActivity.class);
+                Intent intent = new Intent(AlphaActivity.this, CameraActivity.class);
                 startActivity(intent);
             }
         });
@@ -44,7 +46,7 @@ public class MaxActivity extends AppCompatActivity {
         arrowLeft.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MaxActivity.this, JordanActivity.class);
+                Intent intent = new Intent(AlphaActivity.this, NMDActivity.class);
                 startActivity(intent);
             }
         });
@@ -52,7 +54,7 @@ public class MaxActivity extends AppCompatActivity {
         arrowRight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MaxActivity.this, ForceActivity.class);
+                Intent intent = new Intent(AlphaActivity.this, CloudActivity.class);
                 startActivity(intent);
             }
         });
@@ -60,7 +62,7 @@ public class MaxActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MaxActivity.this, NikeActivity.class);
+                Intent intent = new Intent(AlphaActivity.this, AdidasActivity.class);
                 startActivity(intent);
             }
         });

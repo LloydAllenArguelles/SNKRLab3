@@ -107,6 +107,21 @@
             android:exported="false">
         </activity>
 
+        <activity
+            android:name=".NMDActivity"
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name=".AlphaActivity"
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name=".CloudActivity"
+            android:exported="false">
+        </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

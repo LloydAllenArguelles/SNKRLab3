@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bgtwo"
     tools:context=".MainActivity2">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,9 +17,9 @@
         <TextView
             android:id="@+id/AppName"
             android:layout_width="0dp"
-            android:layout_height="42dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="40dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="50dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="SNKRLAB"
             android:textColor="@color/main"
@@ -47,7 +48,7 @@
             android:src="@drawable/snkrlab_no_text"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="0dp"
             app:layout_constraintStart_toEndOf="@id/AppName"/>
 
         <LinearLayout
@@ -130,19 +131,6 @@
                         android:layout_marginTop="15dp"
                         android:layout_centerHorizontal="true"/>
                 </RelativeLayout>
-
-                <ImageView
-                    android:id="@+id/nikeOverlay"
-                    android:layout_width="180dp"
-                    android:layout_height="140dp"
-                    android:src="@drawable/comingsoon"
-                    android:scaleType="fitXY"
-                    android:clickable="true"
-                    android:alpha="0.5"
-                    app:layout_constraintTop_toTopOf="@id/nikeImage"
-                    app:layout_constraintStart_toStartOf="@id/nikeImage"
-                    app:layout_constraintEnd_toEndOf="@id/nikeImage"
-                    app:layout_constraintBottom_toBottomOf="@id/nikeImage" />
 
             </androidx.cardview.widget.CardView>
 

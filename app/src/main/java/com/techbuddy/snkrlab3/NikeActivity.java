@@ -10,6 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.net.Uri;
+import android.widget.VideoView;
+import android.media.MediaPlayer;
 
 public class NikeActivity extends AppCompatActivity {
 
@@ -17,6 +20,13 @@ public class NikeActivity extends AppCompatActivity {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_nike);
+
+            VideoView videoView = findViewById(R.id.videoView);
+            String uriPath = "android.resource://" + getPackageName() + "/" + R.raw.nikebg;
+            videoView.setVideoURI(Uri.parse(uriPath));
+            videoView.start();
+            videoView.setOnPreparedListener(MediaPlayer::start);
+            videoView.setOnCompletionListener(MediaPlayer::start);
 
             ImageView back = findViewById(R.id.back);
 
@@ -59,6 +69,14 @@ public class NikeActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     Intent intent = new Intent(NikeActivity.this, MainActivity2.class);
                     startActivity(intent);
+                }
+            });
+
+            videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    // Restart the video when it completes
+                    videoView.start(); // Loop the video
                 }
             });
 
