@@ -2,9 +2,11 @@ package com.techbuddy.snkrlab3.adapters;
 
 import com.kwabenaberko.newsapilib.models.Article;
 import com.squareup.picasso.Picasso;
+import com.techbuddy.snkrlab3.NewsFullActivity;
 import com.techbuddy.snkrlab3.R;
 import java.util.List;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,10 +36,23 @@ public class NewsRecyclerAdapter extends RecyclerView.Adapter<NewsRecyclerAdapte
         Article article = articleList.get(position);
         holder.titleTextView.setText(article.getTitle());
         holder.sourceTextView.setText(article.getSource().getName());
-        Picasso.get().load(article.getUrlToImage())
-                .error(R.drawable.no_image_icon)
-                .placeholder(R.drawable.no_image_icon)
-                .into(holder.imageView);
+
+        String imageUrl = article.getUrlToImage();
+        if (imageUrl != null && !imageUrl.isEmpty()) {
+            Picasso.get().load(imageUrl)
+                    .error(R.drawable.no_image_icon)
+                    .placeholder(R.drawable.no_image_icon)
+                    .into(holder.imageView);
+        } else {
+            // Handle the case where imageUrl is null or empty
+            holder.imageView.setImageResource(R.drawable.no_image_icon);
+        }
+
+        holder.itemView.setOnClickListener((v -> {
+            Intent intent = new Intent(v.getContext(), NewsFullActivity.class);
+            intent.putExtra("url",article.getUrl());
+            v.getContext().startActivity(intent);
+        }));
     }
 
     public void updateData(List<Article> data){

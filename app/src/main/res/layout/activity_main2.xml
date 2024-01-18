@@ -74,7 +74,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/profile" />
 
-            <EditText
+            <androidx.appcompat.widget.SearchView
                 android:id="@+id/editText"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
@@ -85,7 +85,7 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:paddingStart="16dp"
-                android:text="Search Sneaks/News"
+                app:queryHint="Search Brands"
                 android:textColor="#62878F"
                 app:layout_constraintEnd_toEndOf="@+id/imageView"
                 app:layout_constraintStart_toStartOf="@+id/textView2"
