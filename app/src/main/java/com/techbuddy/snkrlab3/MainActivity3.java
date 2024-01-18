@@ -10,8 +10,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.ImageButton;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.progressindicator.LinearProgressIndicator;
 import com.kwabenaberko.newsapilib.NewsApiClient;
 import com.kwabenaberko.newsapilib.models.Article;
@@ -56,11 +56,11 @@ public class MainActivity3 extends AppCompatActivity {
             }
         });
 
-        FloatingActionButton fabChatbot = findViewById(R.id.fabChatbot);
+        ImageButton fabChatbot = findViewById(R.id.fabChatbot);
         fabChatbot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Handle the click event for the Floating Action Button
+                // Handle the click event for the ImageButton
                 Intent chatbotIntent = new Intent(MainActivity3.this, ChatbotActivity.class);
                 startActivity(chatbotIntent);
             }

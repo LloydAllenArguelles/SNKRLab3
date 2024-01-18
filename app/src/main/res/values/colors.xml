@@ -14,6 +14,6 @@
     <color name="main">#15B2F5</color>
     <color name="dark">#00003f</color>
     <color name="first">#92FFFF</color>
-    <color name="second">#94FF92</color>
-    <color name="third">#FDFF92</color>
+    <color name="second">#FD6501</color>
+    <color name="third">#6566FD</color>
 </resources>
