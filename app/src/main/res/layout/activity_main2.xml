@@ -5,63 +5,101 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bgtwo"
+    android:background="@color/white"
     tools:context=".MainActivity2">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/constraintLayout"
-        android:layout_marginTop="20dp">
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/AppName"
-            android:layout_width="0dp"
-            android:layout_height="45dp"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="50dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="SNKRLAB"
-            android:textColor="@color/main"
-            android:textSize="40sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:background="@drawable/mainbg3">
 
-        <TextView
-            android:id="@+id/Welcome"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="4dp"
-            android:text="Explore sneaks on your phone!"
-            android:textColor="@color/shoeColor"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toStartOf="@+id/applogo"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/AppName" />
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:alpha="0.9"
+                android:src="@drawable/back2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="160dp"
-            android:id="@+id/applogo"
-            android:src="@drawable/snkrlab_no_text"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="0dp"
-            app:layout_constraintStart_toEndOf="@id/AppName"/>
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/rubik"
+                android:shadowColor="#000000"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="10"
+                android:text="Explore sneaks"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/rubik_medium"
+                android:shadowColor="#000000"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="10"
+                android:text="Without the Hassle"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/profile" />
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/search_bg"
+                android:drawableLeft="@drawable/ic_search_black_24dp"
+                android:drawablePadding="16dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:paddingStart="16dp"
+                android:text="Search Sneaks/News"
+                android:textColor="#62878F"
+                app:layout_constraintEnd_toEndOf="@+id/imageView"
+                app:layout_constraintStart_toStartOf="@+id/textView2"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="175dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/row1"
             android:orientation="horizontal"
             android:layout_marginTop="10dp"
-            android:padding="10dp"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/applogo">
+            android:padding="10dp">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
@@ -137,16 +175,12 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="175dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/row2"
             android:orientation="horizontal"
             android:layout_marginTop="0dp"
-            android:padding="10dp"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/row1">
+            android:padding="10dp">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
@@ -183,13 +217,13 @@
                 </RelativeLayout>
 
                 <ImageView
-                    android:id="@+id/nikeOverlay"
+                    android:id="@+id/nikeOverlay1"
                     android:layout_width="180dp"
                     android:layout_height="140dp"
                     android:src="@drawable/comingsoon"
                     android:scaleType="fitXY"
                     android:clickable="true"
-                    android:alpha="0.5"
+                    android:alpha="0.8"
                     app:layout_constraintTop_toTopOf="@id/nikeImage"
                     app:layout_constraintStart_toStartOf="@id/nikeImage"
                     app:layout_constraintEnd_toEndOf="@id/nikeImage"
@@ -232,13 +266,13 @@
                 </RelativeLayout>
 
                 <ImageView
-                    android:id="@+id/nikeOverlay"
+                    android:id="@+id/nikeOverlay2"
                     android:layout_width="180dp"
                     android:layout_height="140dp"
                     android:src="@drawable/comingsoon"
                     android:scaleType="fitXY"
                     android:clickable="true"
-                    android:alpha="0.5"
+                    android:alpha="0.8"
                     app:layout_constraintTop_toTopOf="@id/nikeImage"
                     app:layout_constraintStart_toStartOf="@id/nikeImage"
                     app:layout_constraintEnd_toEndOf="@id/nikeImage"
@@ -249,16 +283,12 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="175dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/row3"
             android:orientation="horizontal"
             android:layout_marginTop="0dp"
-            android:padding="10dp"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/row2">
+            android:padding="10dp">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
@@ -295,13 +325,13 @@
                 </RelativeLayout>
 
                 <ImageView
-                    android:id="@+id/nikeOverlay"
+                    android:id="@+id/nikeOverlay3"
                     android:layout_width="180dp"
                     android:layout_height="140dp"
                     android:src="@drawable/comingsoon"
                     android:scaleType="fitXY"
                     android:clickable="true"
-                    android:alpha="0.5"
+                    android:alpha="0.8"
                     app:layout_constraintTop_toTopOf="@id/nikeImage"
                     app:layout_constraintStart_toStartOf="@id/nikeImage"
                     app:layout_constraintEnd_toEndOf="@id/nikeImage"
@@ -344,13 +374,13 @@
                 </RelativeLayout>
 
                 <ImageView
-                    android:id="@+id/nikeOverlay"
+                    android:id="@+id/nikeOverlay4"
                     android:layout_width="180dp"
                     android:layout_height="140dp"
                     android:src="@drawable/comingsoon"
                     android:scaleType="fitXY"
                     android:clickable="true"
-                    android:alpha="0.5"
+                    android:alpha="0.8"
                     app:layout_constraintTop_toTopOf="@id/nikeImage"
                     app:layout_constraintStart_toStartOf="@id/nikeImage"
                     app:layout_constraintEnd_toEndOf="@id/nikeImage"
@@ -360,6 +390,6 @@
 
         </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 </ScrollView>
