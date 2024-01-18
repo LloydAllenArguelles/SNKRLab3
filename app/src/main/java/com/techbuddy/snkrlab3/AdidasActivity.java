@@ -51,6 +51,8 @@ public class AdidasActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdidasActivity.this, AlphaActivity.class);
+                int intValue = 1; // Replace this with your desired integer value
+                intent.putExtra("shoe", intValue);
                 startActivity(intent);
             }
         });
@@ -60,6 +62,8 @@ public class AdidasActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdidasActivity.this, CloudActivity.class);
+                int intValue = 1; // Replace this with your desired integer value
+                intent.putExtra("shoe", intValue);
                 startActivity(intent);
             }
         });
@@ -68,6 +72,8 @@ public class AdidasActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdidasActivity.this, MainActivity2.class);
+                int intValue = 1; // Replace this with your desired integer value
+                intent.putExtra("shoe", intValue);
                 startActivity(intent);
             }
         });
