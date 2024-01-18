@@ -39,6 +39,8 @@ public class AlphaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AlphaActivity.this, CameraActivity.class);
+                int intValue = 1; // Replace this with your desired integer value
+                intent.putExtra("shoe", intValue);
                 startActivity(intent);
             }
         });

@@ -37,6 +37,8 @@ public class MaxActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MaxActivity.this, CameraActivity.class);
+                int intValue = 0; // Replace this with your desired integer value
+                intent.putExtra("shoe", intValue);
                 startActivity(intent);
             }
         });

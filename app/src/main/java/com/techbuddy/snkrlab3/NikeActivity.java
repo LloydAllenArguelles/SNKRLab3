@@ -42,8 +42,6 @@ public class NikeActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(NikeActivity.this, ForceActivity.class);
-                    int intValue = 0; // Replace this with your desired integer value
-                    intent.putExtra("shoe", intValue);
                     startActivity(intent);
                 }
             });
@@ -53,8 +51,6 @@ public class NikeActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(NikeActivity.this, JordanActivity.class);
-                    int intValue = 0; // Replace this with your desired integer value
-                    intent.putExtra("shoe", intValue);
                     startActivity(intent);
                 }
             });
@@ -64,8 +60,6 @@ public class NikeActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(NikeActivity.this, MaxActivity.class);
-                    int intValue = 0; // Replace this with your desired integer value
-                    intent.putExtra("shoe", intValue);
                     startActivity(intent);
                 }
             });
@@ -74,8 +68,6 @@ public class NikeActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(NikeActivity.this, MainActivity2.class);
-                    int intValue = 0; // Replace this with your desired integer value
-                    intent.putExtra("shoe", intValue);
                     startActivity(intent);
                 }
             });
