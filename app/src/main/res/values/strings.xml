@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SNKRLab3</string>
+    <string name="app_name">SNKRLab</string>
     <string name="transition_shared_dummy">transition_shared_dummy</string>
     <string name="share_video">Share video</string>
     <string name="share_image">Share image</string>

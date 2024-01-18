@@ -88,7 +88,11 @@ task testClasses(type: JavaCompile) {
     }
 }
 
-
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io'}
+    gradlePluginPortal()
+}
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
@@ -114,4 +118,8 @@ dependencies {
 
     implementation "com.google.cloud:google-cloud-dialogflow:2.1.0"
     implementation "io.grpc:grpc-okhttp:1.30.0"
+    implementation "com.github.KwabenBerko:News-API-Java:1.0.2"
+    implementation "com.squareup.picasso:picasso:2.8"
+
+
 }
